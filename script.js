@@ -1,16 +1,3 @@
-const ids = new Set(['home','lunch','dinner','sweets','bakery','shop','reservation']);
-function showPage() {
-  const requested = location.hash.slice(1);
-  const id = ids.has(requested) ? requested : 'home';
-  document.querySelectorAll('.page').forEach(page => {
-    const active = page.id === id;
-    page.classList.toggle('active', active);
-    page.setAttribute('aria-hidden', String(!active));
-  });
-  window.scrollTo({top:0,behavior:'instant'});
-}
-window.addEventListener('hashchange', showPage);
-showPage();
 const form = document.getElementById('reservation-form');
 const dateInput = form.elements.date;
 const today = new Date();
