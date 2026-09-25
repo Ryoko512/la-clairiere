@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf3e8">
+  <title>La Clairière | Café & Restaurant</title>
+  <meta name="description" content="La Clairière カフェ＆レストランのコンセプト、メニュー、フェア、店舗情報を紹介するポートフォリオ作品です。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="main">
+    <section class="page active" id="home" aria-label="トップページ">
+      <div class="canvas">
+        <img src="images/top.jpg" width="1080" height="1350" alt="La Clairière。緑に囲まれたカフェレストランのコンセプトと5つのページ案内">
+        <a class="hotspot lunch" href="#lunch" aria-label="ランチメニューを見る"></a>
+        <a class="hotspot dinner" href="#dinner" aria-label="ディナーメニューを見る"></a>
+        <a class="hotspot sweets" href="#sweets" aria-label="スイーツフェアを見る"></a>
+        <a class="hotspot bakery" href="#bakery" aria-label="週末限定ベーカリーフェアを見る"></a>
+        <a class="hotspot shop" href="#shop" aria-label="店舗情報・ご予約を見る"></a>
+      </div>
+    </section>
+    <section class="page" id="lunch" aria-label="ランチメニュー">
+      <nav class="navigation"><a href="#home">← TOPへ戻る</a><a href="#dinner">次へ →</a></nav>
+      <img src="images/lunch.jpg" width="1080" height="1350" alt="ランチメニュー。木の温もりを感じる店内とランチプレート">
+    </section>
+    <section class="page" id="dinner" aria-label="ディナーメニュー">
+      <nav class="navigation"><a href="#lunch">← 前へ</a><a href="#home">TOPへ戻る</a><a href="#sweets">次へ →</a></nav>
+      <img src="images/dinner.jpg" width="1080" height="1350" alt="ディナーメニュー">
+    </section>
+    <section class="page" id="sweets" aria-label="スイーツフェア">
+      <nav class="navigation"><a href="#dinner">← 前へ</a><a href="#home">TOPへ戻る</a><a href="#bakery">次へ →</a></nav>
+      <img src="images/sweets.jpg" width="1080" height="1350" alt="スイーツフェア">
+    </section>
+    <section class="page" id="bakery" aria-label="週末限定ベーカリーフェア">
+      <nav class="navigation"><a href="#sweets">← 前へ</a><a href="#home">TOPへ戻る</a><a href="#shop">次へ →</a></nav>
+      <img src="images/bakery.jpg" width="1080" height="1350" alt="週末限定ベーカリーフェア">
+    </section>
+    <section class="page" id="shop" aria-label="店舗情報・ご予約">
+      <nav class="navigation"><a href="#bakery">← 前へ</a><a href="#home">TOPへ戻る</a></nav>
+      <div class="canvas">
+        <img src="images/shop.jpg" width="1080" height="1350" alt="店舗情報。営業時間11時から21時、定休日は火曜日。ご予約はこちらから予約フォームの見本へ進めます。">
+        <a class="shop-reserve" href="#reservation" aria-label="ご予約はこちら。予約フォームへ進む"></a>
+        <a class="shop-top-label" href="#home">TOPへ →</a>
+      </div>
+      <p class="note">※ 架空店舗の制作作品です。予約の受付は行っていません。</p>
+      <a class="sora" href="https://jsk0512rs.wixsite.com/sora">← SORA ポートフォリオに戻る</a>
+    </section>
+    <section class="page" id="reservation" aria-label="予約フォームの見本">
+      <nav class="navigation"><a href="#shop">← 店舗情報へ</a><a href="#home">TOPへ戻る</a></nav>
+      <div class="form-panel">
+        <p class="eyebrow">La Clairière · CAFÉ & RESTAURANT</p>
+        <h1>ご予約はこちらへ</h1>
+        <p>ご希望の内容を入力できる、ポートフォリオ用の予約フォーム見本です。実際の予約や送信は行われません。</p>
+        <form id="reservation-form">
+          <label>お名前 <span>必須</span><input name="name" autocomplete="name" required maxlength="80" placeholder="例：山田 花子"></label>
+          <label>メールアドレス <span>必須</span><input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="example@example.com"></label>
+          <label>電話番号 <span>必須</span><input name="tel" type="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" title="電話番号を入力してください" placeholder="例：090-1234-5678"></label>
+          <div class="form-row">
+            <label>ご希望日 <span>必須</span><input name="date" type="date" required></label>
+            <label>ご希望時間 <span>必須</span><select name="time" required>
+              <option value="">選択してください</option>
+              <option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option>
+              <option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+            </select></label>
+          </div>
+          <label>人数 <span>必須</span><select name="guests" required><option value="">選択してください</option><option>1名</option><option>2名</option><option>3名</option><option>4名</option><option>5名</option><option>6名以上</option></select></label>
+          <label>ご要望など <textarea name="message" rows="4" maxlength="500" placeholder="任意でご入力ください"></textarea></label>
+          <button type="submit">入力内容を確認する →</button>
+        </form>
+        <div id="reservation-result" class="result" role="status" hidden></div>
+      </div>
+      <a class="sora" href="https://jsk0512rs.wixsite.com/sora">← SORA ポートフォリオに戻る</a>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
