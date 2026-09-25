@@ -1,4 +1,14 @@
 const form = document.getElementById('reservation-form');
+const reservation = document.getElementById('reservation');
+function syncReservation() {
+  const open = window.location.hash === '#reservation';
+  reservation.style.display = open ? 'block' : 'none';
+}
+document.querySelectorAll('a[href="#reservation"]').forEach(link => {
+  link.addEventListener('click', () => { reservation.style.display = 'block'; });
+});
+window.addEventListener('hashchange', syncReservation);
+syncReservation();
 const dateInput = form.elements.date;
 const today = new Date();
 dateInput.min = [today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
